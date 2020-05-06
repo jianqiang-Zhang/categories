@@ -1,6 +1,7 @@
 
 #include <netdb.h> 
 #include <stdio.h> 
+#include<unistd.h>
 #include <stdlib.h> 
 #include <string.h> 
 #include <sys/socket.h> 
@@ -20,12 +21,12 @@ void func(int sockfd)
     int n;
     pthread_t tid;
     bzero(buff, sizeof(buff));
-    printf("正在传输 \n");
+    printf("姝ｅ湪浼犺緭 \n");
     int fd = open("TEST.txt", O_RDONLY);
     read(fd, buff, sizeof(buff));
     close(fd);
-    //进行传输
-    //通过另一个线程来进行close
+    //杩涜浼犺緭
+    //閫氳繃鍙︿竴涓嚎绋嬫潵杩涜close
     pthread_create(&tid, NULL, thr_fn, NULL);
 
 
